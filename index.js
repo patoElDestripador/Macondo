@@ -28,14 +28,14 @@ class Viaje {
 
     }
     caso2(altoOriginal  = 60, largoOriginal = 40, anchoOriginal = 20) {
-      let alto =  55 / altoOriginal; 
-      let largo =  40 /largoOriginal; 
-      let ancho =  20 /anchoOriginal; 
-      let min = Math.min(alto,largo,ancho);
-      let nuevoAlto  =  Math.round(altoOriginal * min);
-      let nuevoLargo =   Math.round(largoOriginal * min);
-      let nuevoAncho =   Math.round(anchoOriginal * min); 
-      return console.log(`Al alto le quita ${nuevoAlto}, al largo ${nuevoLargo} y al ancho ${nuevoAncho}`);
+        let alto =  55 / altoOriginal; 
+        let largo =  40 /largoOriginal; 
+        let ancho =  20 /anchoOriginal; 
+        let min = Math.min(alto,largo,ancho);
+        let nuevoAlto  =  Math.round(altoOriginal * min);
+        let nuevoLargo =   Math.round(largoOriginal * min);
+        let nuevoAncho =   Math.round(anchoOriginal * min); 
+        return console.log(`Al alto le quita ${nuevoAlto}, al largo ${nuevoLargo} y al ancho ${nuevoAncho}`);
     }
     caso3(tiempo = 1) {
       //setear default timepo 1 hora en caso de envento agregar un evento mas
@@ -48,7 +48,9 @@ class Viaje {
     }
       this.generarGasto(tiempo * 50000);
     this.contraseñaWifi = arrayTemp2.join('');
+        String.fromCharCode
     return this.mensajes(3)
+
     }
     caso4(mensaje = "Taxi me puede llevar al hotel mariposas amarillas") {
         console.log("pai digale al taxista de la siguiente forma: ",mensaje
@@ -101,6 +103,74 @@ class Viaje {
                 break;
     }
     }
+    caso6(){
+        let vivo = true
+        let dia = 1
+        while(vivo && dia < 5){
+            switch (vestimenta) {
+                case 1: //amarillo                
+                    console.log(`se fue a la piscina, el agua huele raro, pero no le pone importancia`);
+                    let res = prompt(`
+                    ¿Entrar en piscina?
+                    1 - Si.
+                    2 - No.
+                    `)
+                    if(res == 1){
+                        console.log("empieza a sentirse ahogado, demasiado cloro, muere")
+                        vivo = false
+                    }
+                    dia++
+                    break;
+                case 2: //verde
+                    res = prompt(`
+                    ¿Quieres continuar toda la caminata?
+                    1 - Si.
+                    2 - No.
+                    `);
+                    if(res == 2){
+                        console.log("se devolverá solo, y de noche se pierde, muere por perdida jeje")
+                        vivo = false
+                    }
+                    dia++
+                    break;
+                case 3: // roja
+                res = prompt(`
+                ¿Que quieres hacer?
+                1 - voleibol.
+                2 - nadar en el mar.
+                3 - tomar cocteles
+                `)
+                if(res == 3){
+                    console.log("de pronto siente un fuerte dolor de cabeza y empieza a perder la visión, chirrinchi adulterado, se tiene que devolver de emergencia. (terminan las vacaciones)")
+                    vivo = false
+                }
+                dia++
+                    break;
+                case 4: // azul
+                `- actividades dentro del hotel
+                - bingo, se lo gana y aumenta su dinero
+                - bailar, y la pasa muy bien
+                - casino y apuesta, y solo se queda con pasaje de regreso (terminan las
+                vacaciones)`
+                res = prompt(`
+                ¿Que quieres hacer?
+                1 - Bingo.
+                2 - Bailar.
+                3 - Casino.
+                `);
+                if(res == 1){
+                    console.log("Ganaste 300.000")
+                    this.presupuesto += 300000 
+                }else if( res == 3){
+                    this.presupuesto = 650000
+                }
+                dia++
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
     generarGasto(gasto) {
         this.presupuesto -= gasto;
         this.mostrarEnPantalla.innerText = `Dinero Actual : ${this.presupuesto}`;
@@ -128,7 +198,11 @@ class Viaje {
                 mensaje = ``;
                 break;
             case 5:
-                mensaje = ``;
+                mensaje = `
+                ¿Que color de ropa te pondras hoy?
+                1 - Amari
+                2 - 
+                `;
                 break;
             case 6:
                 mensaje =`Desea comprar algo mas
@@ -139,6 +213,8 @@ class Viaje {
         }
         return parseInt(prompt(mensaje))
     }
+    //Ej 3 Explicar 
+    //ej 2 Explicar 
 }
 let funciona = new Viaje(1);
 
